@@ -1,6 +1,6 @@
 # Cluster Name
-output "cluster_name" {
-  value = "${var.cluster_name}"
+output "name_prefix" {
+  value = "${var.name_prefix}"
 }
 
 # Target Self Link 

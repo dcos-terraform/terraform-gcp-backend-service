@@ -1,5 +1,5 @@
 # Cluster Name
-variable "cluster_name" {}
+variable "name_prefix" {}
 
 # Target Self Link 
 variable "target" {}
