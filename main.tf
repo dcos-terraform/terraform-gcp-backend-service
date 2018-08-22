@@ -2,11 +2,11 @@ provider "google" {}
 
 resource "google_compute_firewall" "node-internal" {
   name    = "${var.name_prefix}-${var.dcos_role}-internal-firewall"
-  network = "${google_compute_network.default.name}"
+  network = "${var.network}"
 
   allow {
     protocol = "tcp"
-    ports    = ["5050", "2181", "8181", "8080"]
+    ports    = "${var.allow_ports}"
   }
 
   source_ranges = ["10.0.0.0/8"]
@@ -19,7 +19,7 @@ resource "google_compute_region_backend_service" "internal-node-region-service" 
   session_affinity = "NONE"
 
   backend {
-    group = "${google_compute_instance_group.node.self_link}"
+    group = "${var.target_pool}"
   }
 
   health_checks = ["${google_compute_health_check.node-healthcheck.self_link}"]
@@ -42,6 +42,6 @@ resource "google_compute_forwarding_rule" "internal-node-forwarding-rule" {
   name                  = "${var.name_prefix}-${var.dcos_role}-internal-lb-forwarding-rule"
   load_balancing_scheme = "INTERNAL"
   backend_service       = "${google_compute_region_backend_service.internal-node-region-service.self_link}"
-  ports                 = ["5050", "2181", "8181", "8080"]
-  subnetwork            = "${google_compute_subnetwork.private.self_link}"
+  ports                 = "${var.allow_ports}"
+  subnetwork            = "${var.network}"
 }

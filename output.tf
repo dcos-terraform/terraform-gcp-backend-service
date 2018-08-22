@@ -3,19 +3,14 @@ output "name_prefix" {
   value = "${var.name_prefix}"
 }
 
-# Target Self Link 
-output "target" {
-  value = "${var.target}"
-}
-
 # Network Name
 output "network" {
   value = "${var.network}"
 }
 
-# Instance Type
-output "ip_addresss" {
-  value = "${var.ip_addresss}"
+# Target Pool Name
+output "target_pool" {
+  value = "${var.target_pool}"
 }
 
 # Instances Self Link
