@@ -26,14 +26,14 @@ variable "target_pool" {
 # Instances Self Link
 variable "instances_self_link" {
   description = "List of instance self links"
-  type = "list"
+  type        = "list"
 }
 
 # ports to allow
 variable "allow_ports" {
   description = "allow ports"
-  type    = "list"
-  default = ["5050", "2181", "8181", "8080"]
+  type        = "list"
+  default     = ["5050", "2181", "8181", "8080"]
 }
 
 # DCOS Role
