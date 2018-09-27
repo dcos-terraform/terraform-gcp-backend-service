@@ -1,3 +1,10 @@
+/**
+ * [![Build Status](https://jenkins-terraform.mesosphere.com/service/dcos-terraform-jenkins/job/dcos-terraform/job/terraform-gcp-backend-service/job/master/badge/icon)](https://jenkins-terraform.mesosphere.com/service/dcos-terraform-jenkins/job/dcos-terraform/job/terraform-gcp-backend-service/job/master/)
+ * # GCP Backend Service
+ *
+ * Used to create the Internal Load Balancer for DC/OS on GCP
+ */
+
 provider "google" {}
 
 resource "google_compute_firewall" "node-internal" {
