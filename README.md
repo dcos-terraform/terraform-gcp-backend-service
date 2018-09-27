@@ -1,26 +1,29 @@
+[![Build Status](https://jenkins-terraform.mesosphere.com/service/dcos-terraform-jenkins/job/dcos-terraform/job/terraform-gcp-backend-service/job/master/badge/icon)](https://jenkins-terraform.mesosphere.com/service/dcos-terraform-jenkins/job/dcos-terraform/job/terraform-gcp-backend-service/job/master/)
 # GCP Backend Service
 
 Used to create the Internal Load Balancer for DC/OS on GCP
+
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|:----:|:-----:|:-----:|
-| cluster_name | Cluster Name | string | - | yes |
-| dcos_role | DCOS Role | string | - | yes |
-| instances_self_link | Instances Self Link | string | - | yes |
-| ip_addresss | Instance Type | string | - | yes |
-| network | Network Name | string | - | yes |
-| target | Target Self Link | string | - | yes |
+| allow_ports | allow ports | list | `<list>` | no |
+| dcos_role | dcos role | string | - | yes |
+| instances_self_link | List of instance self links | list | - | yes |
+| name_prefix | Cluster Name | string | - | yes |
+| network | network | string | - | yes |
+| project_id | project id | string | - | yes |
+| region | region | string | - | yes |
+| target_pool | target pool | string | - | yes |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
-| cluster_name | Cluster Name |
 | dcos_role | DCOS Role |
 | instances_self_link | Instances Self Link |
-| ip_addresss | Instance Type |
+| name_prefix | Cluster Name |
 | network | Network Name |
-| target | Target Self Link |
+| target_pool | Target Pool Name |
 
