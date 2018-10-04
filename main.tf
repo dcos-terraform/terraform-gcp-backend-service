@@ -3,6 +3,21 @@
  * # GCP Backend Service
  *
  * Used to create the Internal Load Balancer for DC/OS on GCP
+ *
+ * ## EXAMPLE
+ *
+ * ```hcl
+ * module "dcos-backend-service" {
+ *   source  = "dcos-terraform/backend-service/gcp"
+ *   version = "~> 0.1"
+ *
+ *   dcos_role = "master"
+ *   project_id = "myid"
+ *   region = "us-west1"
+ *   network = "network_self_link"
+ *   ...
+ * }
+ * ```
  */
 
 provider "google" {}
