@@ -14,7 +14,6 @@ module "dcos-backend-service" {
   project_id = "myid"
   region = "us-west1"
   network = "network_self_link"
-  ...
 }
 ```
 
@@ -24,9 +23,9 @@ module "dcos-backend-service" {
 | Name | Description | Type | Default | Required |
 |------|-------------|:----:|:-----:|:-----:|
 | allow_ports | allow ports | list | `<list>` | no |
+| cluster_name | Cluster Name | string | - | yes |
 | dcos_role | dcos role | string | - | yes |
 | instances_self_link | List of instance self links | list | - | yes |
-| name_prefix | Cluster Name | string | - | yes |
 | network | network | string | - | yes |
 | project_id | project id | string | - | yes |
 | region | region | string | - | yes |

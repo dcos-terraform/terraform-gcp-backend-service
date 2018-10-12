@@ -15,7 +15,6 @@
  *   project_id = "myid"
  *   region = "us-west1"
  *   network = "network_self_link"
- *   ...
  * }
  * ```
  */
@@ -23,7 +22,7 @@
 provider "google" {}
 
 resource "google_compute_firewall" "node-internal" {
-  name    = "${var.name_prefix}-${var.dcos_role}-internal-firewall"
+  name    = "${var.cluster_name}-${var.dcos_role}-internal-firewall"
   network = "${var.network}"
 
   allow {
@@ -35,7 +34,7 @@ resource "google_compute_firewall" "node-internal" {
 }
 
 resource "google_compute_region_backend_service" "internal-node-region-service" {
-  name             = "${var.name_prefix}-${var.dcos_role}-internal-backend-service"
+  name             = "${var.cluster_name}-${var.dcos_role}-internal-backend-service"
   protocol         = "TCP"
   timeout_sec      = 10
   session_affinity = "NONE"
@@ -49,7 +48,7 @@ resource "google_compute_region_backend_service" "internal-node-region-service" 
 
 # Used for the internal load balancer. The external load balancer only supports google_compute_http_health_check resource.
 resource "google_compute_health_check" "node-healthcheck" {
-  name                = "${var.name_prefix}-mesos-${var.dcos_role}-healthcheck"
+  name                = "${var.cluster_name}-mesos-${var.dcos_role}-healthcheck"
   check_interval_sec  = 30
   timeout_sec         = 5
   healthy_threshold   = 2
@@ -61,7 +60,7 @@ resource "google_compute_health_check" "node-healthcheck" {
 }
 
 resource "google_compute_forwarding_rule" "internal-node-forwarding-rule" {
-  name                  = "${var.name_prefix}-${var.dcos_role}-internal-lb-forwarding-rule"
+  name                  = "${var.cluster_name}-${var.dcos_role}-internal-lb-forwarding-rule"
   load_balancing_scheme = "INTERNAL"
   backend_service       = "${google_compute_region_backend_service.internal-node-region-service.self_link}"
   ports                 = "${var.allow_ports}"
