@@ -28,7 +28,7 @@ module "dcos-backend-service" {
 | instances_self_link | List of instance self links | list | - | yes |
 | network | Network Name | string | - | yes |
 | project_id | project id | string | - | yes |
-| region | Region to use. If not specify AWS current region is used. | string | - | yes |
+| region | region | string | - | yes |
 | target_pool | Target Pool | string | - | yes |
 
 ## Outputs

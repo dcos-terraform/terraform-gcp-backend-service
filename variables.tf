@@ -3,7 +3,7 @@ variable "project_id" {
 }
 
 variable "region" {
-  description = "Region to use. If not specify AWS current region is used."
+  description = "region"
 }
 
 variable "cluster_name" {
