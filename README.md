@@ -22,22 +22,22 @@ module "dcos-backend-service" {
 
 | Name | Description | Type | Default | Required |
 |------|-------------|:----:|:-----:|:-----:|
-| allow_ports | allow ports | list | `<list>` | no |
-| cluster_name | Cluster Name | string | - | yes |
-| dcos_role | dcos role | string | - | yes |
+| allow_ports | ports to allow | list | `<list>` | no |
+| cluster_name | Name of the DC/OS cluster | string | - | yes |
+| dcos_role | DCOS Role | string | - | yes |
 | instances_self_link | List of instance self links | list | - | yes |
-| network | network | string | - | yes |
+| network | Network Name | string | - | yes |
 | project_id | project id | string | - | yes |
 | region | region | string | - | yes |
-| target_pool | target pool | string | - | yes |
+| target_pool | Target Pool | string | - | yes |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
 | dcos_role | DCOS Role |
-| instances_self_link | Instances Self Link |
+| instances_self_link | List of instance self links |
 | name_prefix | Cluster Name |
 | network | Network Name |
-| target_pool | Target Pool Name |
+| target_pool | Target Pool |
 
