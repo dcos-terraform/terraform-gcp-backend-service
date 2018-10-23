@@ -1,29 +1,24 @@
-# Cluster Name
 output "name_prefix" {
   description = "Cluster Name"
   value       = "${var.cluster_name}"
 }
 
-# Network Name
 output "network" {
-  description = "network"
+  description = "Network Name"
   value       = "${var.network}"
 }
 
-# Target Pool Name
 output "target_pool" {
-  description = "target pool"
+  description = "Target Pool"
   value       = "${var.target_pool}"
 }
 
-# Instances Self Link
 output "instances_self_link" {
   description = "List of instance self links"
   value       = "${var.instances_self_link}"
 }
 
-# DCOS Role
 output "dcos_role" {
-  description = "dcos role"
+  description = "DCOS Role"
   value       = "${var.dcos_role}"
 }
