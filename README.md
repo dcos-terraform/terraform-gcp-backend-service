@@ -8,7 +8,7 @@ Used to create the Internal Load Balancer for DC/OS on GCP
 ```hcl
 module "dcos-backend-service" {
   source  = "dcos-terraform/backend-service/gcp"
-  version = "~> 0.1"
+  version = "~> 0.1.0"
 
   dcos_role = "master"
   project_id = "myid"
