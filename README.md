@@ -21,7 +21,6 @@ module "dcos-backend-service" {
 
 | Name | Description | Type | Default | Required |
 |------|-------------|:----:|:-----:|:-----:|
-| allow\_ports | ports to allow | list | `<list>` | no |
 | cluster\_name | Name of the DC/OS cluster | string | n/a | yes |
 | dcos\_role | DCOS Role | string | n/a | yes |
 | instances\_self\_link | List of instance self links | list | n/a | yes |
@@ -29,6 +28,7 @@ module "dcos-backend-service" {
 | project\_id | project id | string | n/a | yes |
 | region | region | string | n/a | yes |
 | target\_pool | Target Pool | string | n/a | yes |
+| allow\_ports | ports to allow | list | `<list>` | no |
 
 ## Outputs
 
