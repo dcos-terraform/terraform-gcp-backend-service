@@ -17,27 +17,26 @@ module "dcos-backend-service" {
 }
 ```
 
-
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|:----:|:-----:|:-----:|
-| allow_ports | ports to allow | list | `<list>` | no |
-| cluster_name | Name of the DC/OS cluster | string | - | yes |
-| dcos_role | DCOS Role | string | - | yes |
-| instances_self_link | List of instance self links | list | - | yes |
-| network | Network Name | string | - | yes |
-| project_id | project id | string | - | yes |
-| region | region | string | - | yes |
-| target_pool | Target Pool | string | - | yes |
+| cluster\_name | Name of the DC/OS cluster | string | n/a | yes |
+| dcos\_role | DCOS Role | string | n/a | yes |
+| instances\_self\_link | List of instance self links | list | n/a | yes |
+| network | Network Name | string | n/a | yes |
+| project\_id | project id | string | n/a | yes |
+| region | region | string | n/a | yes |
+| target\_pool | Target Pool | string | n/a | yes |
+| allow\_ports | ports to allow | list | `<list>` | no |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
-| dcos_role | DCOS Role |
-| instances_self_link | List of instance self links |
-| name_prefix | Cluster Name |
+| dcos\_role | DCOS Role |
+| instances\_self\_link | List of instance self links |
+| name\_prefix | Cluster Name |
 | network | Network Name |
-| target_pool | Target Pool |
+| target\_pool | Target Pool |
 
