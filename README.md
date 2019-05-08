@@ -36,7 +36,7 @@ module "dcos-backend-service" {
 |------|-------------|
 | dcos\_role | DCOS Role |
 | instances\_self\_link | List of instance self links |
-| name\_prefix | Cluster Name |
+| name\_prefix | Name Prefix |
 | network | Network Name |
 | target\_pool | Target Pool |
 
